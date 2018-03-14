@@ -51,7 +51,8 @@ public class DrawDemo
      */
     private void square(Pen pen)
     {
-        for (int i=0; i<4; i++) {
+        for (int i=0; i<4; i++) 
+        {
             pen.move(100);
             pen.turn(90);
         }
@@ -70,11 +71,11 @@ public class DrawDemo
             int green = random.nextInt(256);
             int blue = random.nextInt(256);
             pen.setColor(new Color(red, green, blue));
-            
+
             pen.randomSquiggle();
         }
     }
-    
+
     /**
      * Clear the screen.
      */
@@ -82,7 +83,7 @@ public class DrawDemo
     {
         myCanvas.erase();
     }
-    
+
     /**
      * @param xPos borde lateral izquiero.
      * @param yPos borde superior.
@@ -90,26 +91,41 @@ public class DrawDemo
     public void drawTriangle(int xPos, int yPos) {
         Pen pen = new Pen(xPos,yPos,myCanvas);
         pen.setColor(Color.green);
-        
-       for(int a = 0; a < 3; a++) 
-       {
+
+        for(int a = 0; a < 3; a++) 
+        {
             pen.move(100);
             pen.turn(-120);
-       }
+        }
     }
-    
-     /**
-     * Dibuja un pentagono verde.
+
+    /**
+     * Dibujar un pentagono verde.
      */
     public void drawPentagon() 
     {
         Pen pen = new Pen(210,210,myCanvas);
         pen.setColor(Color.green);
-        
+
         for(int b = 0; b < 5; b++)
-       {
+        {
             pen.move(80);
             pen.turn(72);
-       }
+        }
+    }
+
+    /**
+     * Dibujar poligono regular
+     * @param El numero de lados del poligono.
+     */
+    public void drawPolygon(int caras)
+    {
+        Pen pen = new Pen(115,115,myCanvas);
+
+        for(int c = 0; c < caras; c++)
+        {
+            pen.move(70);
+            pen.turn(360/caras);
+        }    
     }
 }
