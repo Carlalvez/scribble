@@ -2,11 +2,8 @@ import java.awt.Color;
 import java.util.Random;
 
 /**
- * Class DrawDemo - provides some short demonstrations showing how to use the 
- * Pen class to create various drawings.
- *
- * @author Michael Kölling and David J. Barnes
- * @version 2011.07.31
+ * @author Carlos Alvarez
+ * @version 14/03/2018
  */
 
 public class DrawDemo
@@ -84,5 +81,20 @@ public class DrawDemo
     public void clear()
     {
         myCanvas.erase();
+    }
+    
+    /**
+     * @param xPos borde lateral izquiero.
+     * @param yPos borde superior.
+     */
+    public void drawTriangle(int xPos, int yPos) {
+        Pen pen = new Pen(xPos,yPos,myCanvas);
+        pen.setColor(Color.green);
+        
+       for(int a = 0; a < 3; a++) 
+       {
+            pen.move(100);
+            pen.turn(-120);
+        }
     }
 }
