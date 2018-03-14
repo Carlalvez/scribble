@@ -128,4 +128,18 @@ public class DrawDemo
             pen.turn(360/caras);
         }    
     }
+    
+    /**
+     * Dibujar Espirales
+     */
+    public void drawSpiral() {
+       Pen pen = new Pen(25,35,myCanvas);
+       int esp = 310;
+       for(int e = 1; esp != 5; e++) 
+       {
+            pen.move(esp);
+            pen.turn(90);
+            esp -= 5; 
+       }
+    }
 }
